@@ -1,6 +1,6 @@
 # WCD prober
 
-A tool for finding web cache deception vulnerabilities
+A tool to find web cache deception vulnerabilities
 
 
 ## prerequisites
