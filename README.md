@@ -36,8 +36,11 @@ If you don't edit this file with your account information the tool will not sear
 
  - load the browser extension (in this repo under the wcd_prober/extension). For doing this go to: about:debugging , click "This firefox" and then click "Load temporary Add-on" and select the wcd_prober/extension/manifest.json file. Now you can open the web extension by clicking on his icon (top right) or by visiting moz-extesnion://EXTENSION-ID/WCD.html. <br/>NOTE: you can also use the extension in Chrome with the help of another extension like the "Firefox Relay" extension. This allow you to use Firefox extension in Chrome.
  
+ ![image](https://github.com/f-min/WCD_prober/blob/mainx/img/screen.png)
+ 
  - run `java -jar WCD_prober.jar`
  
+ ![image](https://github.com/f-min/WCD_prober/blob/mainx/img/cli.png)
  
  - once authenticated on the domain to test enter the domain name in the extension input and click "start scan". The java program will do all the job.
  
