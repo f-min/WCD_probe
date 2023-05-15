@@ -14,7 +14,8 @@ A tool to find web cache deception vulnerabilities
 
 ### before use
 
-You MUST edit the /WCD_prober/conf/marker.txt file before running the program. You must enter all of the account information provided during the registration on the site you want to test. For example your email, your username, your address, etc... The program will search these marker during the computation for finding WCD vulnerabilities. <br/>An example of such file can be found in the code below:
+You need to edit the markers.txt file for the tool to work correctly. It is necessary to enter the markers of the account with which the tests are carried out (i.e. username, email, name, surname, etc.). If the file in question is left blank, the tool may not detect some WCDs.
+ <br/>An example of such file can be found in the code below:
 
 ```
 my_username
@@ -22,8 +23,6 @@ my_email@email.com
 my_address
 my_phone_number
 ```
-
-If you don't edit this file with your account information the tool will not search for these markers and you may miss some WCD.
 
 ### usage from the CLI
 
