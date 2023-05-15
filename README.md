@@ -64,7 +64,7 @@ In every usage case if the tool find a possible WCD, it will append the results 
    This file contain the markers (one per line) to be used to search during the computation.
   
  
-## limitation and future improvement
+## limitations and future improvements
 
 The program does not work in cases where the test application checks the navigator.webdriver JS property (client-side antibot software). The tool proposed here will be updated with new possible attack cases and improvements.
 
