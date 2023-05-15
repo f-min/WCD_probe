@@ -47,8 +47,7 @@ my_phone_number
   
  
  
-NOTE: it is advisable to use WCD_prober with the extension because you don't need to copy and paste the domain cookies in the CLI. By using the extension you can also insert more then one domain to analyze and the Java program will queue these computation.
- 
+If you use the extension you can specify multiple domains separated by carriage returns in the appropriate input textarea, the Java program will queue the requests and execute them one at a time.
  
 In every usage case if the tool find a possible WCD, it will append the results in the result.txt file inside the main repo directory and the relative output will be printed on the CLI too.
 
@@ -67,8 +66,8 @@ In every usage case if the tool find a possible WCD, it will append the results 
  
 ## limitation and future improvement
 
-It doesn't work in presence of antibot software that check the navigator.webdriver Javascript property. For bypassing this software protection you can use a modified browser dirver, in the future i'm planning for integrate that here.
-This tool was build to cover the majority of cases of Web cache deception vulnerbilies, independently from the underlaying web app infrastructure.
-It require authentication to work, so you have to be authenticated via your browser and then run WCD_prober, via web-extension or via CLI.
+The program does not work in cases where the test application checks the navigator.webdriver JS property (client-side antibot software). The tool proposed here will be updated with new possible attack cases and improvements.
+
+
 
 
