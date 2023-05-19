@@ -14,7 +14,7 @@ A tool to find web cache deception vulnerabilities
 
 ### before use
 
-You need to edit the /WCD_prober/conf/marker.txt file for the tool to work correctly. It is necessary to enter the markers of the account with which the tests are carried out (i.e. username, email, name, surname, etc.). If the file in question is left blank, the tool may not detect some WCDs.
+You need to edit the /WCD_probe/conf/marker.txt file for the tool to work correctly. It is necessary to enter the markers of the account with which the tests are carried out (i.e. username, email, name, surname, etc.). If the file in question is left blank, the tool may not detect some WCDs.
  <br/>An example of such file can be found in the code below:
 
 ```
@@ -26,7 +26,7 @@ my_phone_number
 
 ### usage from the CLI
 
- - run: `java -jar WCD_prober.jar --cookies=COOKIES --domain=DOMAIN_TO_ANALYZE`
+ - run: `java -jar WCD_probe.jar --cookies=COOKIES --domain=DOMAIN_TO_ANALYZE`
    where COOKIES, are your session cookies and DOMAIN_TO_ANALYZE is the domain you want to analyze
    
    
@@ -37,7 +37,7 @@ my_phone_number
  <br/> For doing this go to: about:debugging , click "This firefox" and then click "Load temporary Add-on" and select the wcd_prober/extension/manifest.json file. <br/>Now you can open the web extension by clicking on his icon (top right) or by visiting moz-extesnion://EXTENSION-ID/WCD.html. <br/>NOTE: To use the extension in Chrome you need to install it with the help of other extensions such as the "firefox Relay" (https://chrome.google.com/webstore/detail/firefox-relay/lknpoadjjkjcmjhbjpcljdednccbldeb).
  
  
- - run `java -jar WCD_prober.jar`
+ - run `java -jar WCD_probe.jar`
  
  ![image](https://github.com/f-min/WCD_prober/blob/mainx/img/cli.png)
  
