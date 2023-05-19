@@ -1,4 +1,4 @@
-# WCD prober
+# WCD probe
 
 A tool to find web cache deception vulnerabilities
 
