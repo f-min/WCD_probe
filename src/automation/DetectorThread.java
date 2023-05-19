@@ -165,14 +165,32 @@ public class DetectorThread extends Thread
 							    BufferedWriter bw = new BufferedWriter(fw);
 							    PrintWriter out = new PrintWriter(bw))
 							{
-							    out.println("Web Cache Deception found at: " + link + suffix[i]);
+						 		if(isMagentoCache)
+						 		{
+						 			out.println("Web Cache Deception found at: " + link + suffix[i] + " with OPEN Mage LTS cache, X-Magento-Vary header value: " + magentoVaryCookieValue);
+						 		}
+						 		else
+						 		{
+						 			out.println("Web Cache Deception found at: " + link + suffix[i]);
+						 		}
+							    
 							    
 							}
 							catch(IOException e) 
 							{
 							    System.out.println(e.getMessage().toString());
 							}
-					 System.out.println("Web Cache Deception found at: " + link + suffix[i]);
+					 
+					if(isMagentoCache)
+			 		{
+			 			System.out.println("Web Cache Deception found at: " + link + suffix[i] + " with OPEN Mage LTS cache, X-Magento-Vary header value: " + magentoVaryCookieValue);
+			 		}
+			 		else
+			 		{
+			 			System.out.println("Web Cache Deception found at: " + link + suffix[i]);
+			 		}
+					 
+					 
 					 break outerloop;
 				 }
 				 
@@ -313,7 +331,7 @@ public class DetectorThread extends Thread
 		String _unauth_response = unauth_response.toString();
 		
 		
-		//try to find a match with the authenticated response
+		//compile the regex pattern and try a match with the authenticated response
 		
 		Matcher m = p.matcher(_auth_response);
         
