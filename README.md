@@ -54,7 +54,7 @@ In every usage case if the tool find a possible WCD, it will append the results 
 ## configuration file
 
  - payload list (payload.txt)
-   This file contain the web cache deception payload used, feel free to modify the list.<br/><br/>
+   This file contain the web cache deception payload used, feel free to modify the list.<br/>
  - crawling parameters list (crawling.txt)
    This file contain 3 crawling parameters that regulate the recursion of the crawling algorithm.<br/>
    MAX_DEPTH , indicating the max depth of the recursion<br/>
@@ -63,6 +63,14 @@ In every usage case if the tool find a possible WCD, it will append the results 
  - marker list (marker.txt)
    This file contain the markers (one per line) to be used to search during the computation.
   
+  
+## building details
+
+the following external jars were used to build the program:
+  
+  - Jsoup (https://jsoup.org/) <br/>
+  - Selenium Java API (https://www.selenium.dev/) <br/>
+ 
  
 ## limitations and future improvements
 
