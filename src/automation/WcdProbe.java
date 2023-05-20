@@ -25,7 +25,7 @@ import com.sun.net.httpserver.HttpServer;
 
 //MAIN
 
-public class WcdProber
+public class WcdProbe
 {
 
    public static void main(String[] args) throws Exception
@@ -34,7 +34,7 @@ public class WcdProber
 	   if(args.length == 0)
 	   {
 		   HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);		//instantiate an HTTP server listening on port 8000
-	       server.createContext("/wcd_prober", new MyHandler());						//set the "/wcd_prober" endpoint handler
+	       server.createContext("/wcd_probe", new MyHandler());						//set the "/wcd_probe" endpoint handler
 	       server.setExecutor(null);
 	       server.start();
 	       System.out.println("\n\n  __     __     ______     _____        ______   ______     ______     ______     ______         \n"
@@ -60,9 +60,9 @@ public class WcdProber
 				   {
 					   if(InternetDomainName.isValid(args[1].substring(args[1].indexOf("=") + 1, args[1].length())))
 					   {
-						   WcdProber prober = new WcdProber();
-						   prober.printTitle();
-				           prober.scan(args[1].substring(args[1].indexOf("=") + 1, args[1].length()), args[0].substring(args[0].indexOf("=") + 1, args[0].length()));
+						   WcdProbe probe = new WcdProbe();
+						   probe.printTitle();
+				           probe.scan(args[1].substring(args[1].indexOf("=") + 1, args[1].length()), args[0].substring(args[0].indexOf("=") + 1, args[0].length()));
 					   }
 					   else
 					   {
@@ -82,9 +82,9 @@ public class WcdProber
 					   {
 						   if(InternetDomainName.isValid(args[0].substring(args[0].indexOf("=") + 1, args[0].length())))
 						   {
-							   WcdProber prober = new WcdProber();
-							   prober.printTitle();
-					           prober.scan(args[0].substring(args[0].indexOf("=") + 1, args[0].length()), args[1].substring(args[1].indexOf("=") + 1, args[1].length()));
+							   WcdProbe probe = new WcdProbe();
+							   probe.printTitle();
+					           probe.scan(args[0].substring(args[0].indexOf("=") + 1, args[0].length()), args[1].substring(args[1].indexOf("=") + 1, args[1].length()));
 						   }
 						   else
 						   {
@@ -138,8 +138,8 @@ public class WcdProber
                OutputStream os = t.getResponseBody();							//close the incoming stream of bytes for the request
                os.close();
                
-               WcdProber prober = new WcdProber();
-               prober.scan(domain, cookies);
+               WcdProbe probe = new WcdProbe();
+               probe.scan(domain, cookies);
            }
            else
            {
