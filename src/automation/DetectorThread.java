@@ -331,7 +331,7 @@ public class DetectorThread extends Thread
 		String _unauth_response = unauth_response.toString();
 		
 		
-		//compile the regex pattern and try a match with the authenticated response
+		//verify if the victim response have a CSRF token inside
 		
 		Matcher m = p.matcher(_auth_response);
         
