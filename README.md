@@ -66,7 +66,7 @@ In every usage case if the tool find a possible WCD, it will append the results 
   
 ## building details
 
-the following external jars were used to build the program:
+the following external libraries were used to build the program:
   
   - Jsoup (https://jsoup.org/) <br/>
   - Selenium Java API (https://www.selenium.dev/) <br/>
