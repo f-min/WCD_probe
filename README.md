@@ -24,7 +24,7 @@ my_address
 my_phone_number
 ```
 
-### usage from the CLI
+### usage with the CLI
 
  - run: `java -jar WCD_probe.jar --cookies=COOKIES --domain=DOMAIN_TO_ANALYZE`
    where COOKIES, are your session cookies and DOMAIN_TO_ANALYZE is the domain you want to analyze
