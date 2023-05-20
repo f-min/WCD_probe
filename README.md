@@ -74,7 +74,7 @@ the following external libraries were used to build the program:
  
 ## limitations and future improvements
 
-The program does not work in cases where the test application checks the navigator.webdriver JS property (client-side antibot software). The tool proposed here will be updated with new possible attack cases and improvements.
+The program does not work in cases where the tested application checks the navigator.webdriver JS property (client-side antibot software). The tool proposed here will be updated with new possible attack cases and improvements.
 
 
 
