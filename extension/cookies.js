@@ -52,7 +52,7 @@ document.getElementById('button').onclick = function()
             
 
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://127.0.0.1:8000/wcd_prober");
+            xhr.open("POST", "http://127.0.0.1:8000/wcd_probe");
             xhr.send(raw_data);
             
             raw_data = "";
