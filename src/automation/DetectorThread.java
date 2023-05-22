@@ -330,22 +330,31 @@ public class DetectorThread extends Thread
 		String _auth_response = auth_response.toString();			//convert the Jsoup Document object to string
 		String _unauth_response = unauth_response.toString();
 		
+		Scanner scanner = new Scanner(_auth_response);
+		while (scanner.hasNextLine())
+		{
+			String line = scanner.nextLine();
+			
+			if(line.toLowerCase().contains("_csrf") || line.toLowerCase().contains("csrftoken") || line.toLowerCase().contains("csrf-token") || line.toLowerCase().contains("_csrftoken") || line.toLowerCase().contains("csrf") || line.toLowerCase().contains("csrf_") || line.toLowerCase().contains("authenticity_token") || line.toLowerCase().contains("form_key"))
+			{
+				
+				Matcher m = p.matcher(line);
+		        
+		        if(m.find())									//if in the victim's response there is a CSRF token
+		        {
+		            String match = m.group();
+		            
+		            if(_unauth_response.contains(match))		//and this CSRF token is either in the attacker response return true
+		            {
+		            	scanner.close();
+		            	return true;
+		            }
+		        }
+				
+			}
+		}
+		scanner.close();
 		
-		//verify if the victim response have a CSRF token inside
-		
-		Matcher m = p.matcher(_auth_response);
-        
-        if(m.find())									//if in the victim's response there is a CSRF token
-        {
-            String match = m.group();
-            
-            if(_unauth_response.contains(match))		//and this CSRF token is either in the attacker response return true
-            {
-            	return true;
-            }
-        }
-        
         return false;	//otherwise return false
-	}
 	
 }
