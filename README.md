@@ -7,7 +7,7 @@ A tool to find web cache deception vulnerabilities
 
  - download this repo and unzip it.
  - install Chrome on your machine.
- - download the chromedriver here: https://chromedriver.chromium.org/downloads, download the same version of your Chrome installation. Then move it to the program directory (the main repository directory).
+ - download the chromedriver here: https://chromedriver.chromium.org/downloads, download the same version of your Chrome installation (chrome://version). Then move it to the program directory (the main repository directory).
  
 
 # usage
@@ -33,7 +33,7 @@ my_phone_number
  
 ### usage with the extension
 
- - Load the browser extension (in this repo under the wcd_prober/extension).
+ - Load the browser extension (in this repo under the wcd_probe/extension).
  <br/> For doing this go to: about:debugging , click "This firefox" and then click "Load temporary Add-on" and select the wcd_prober/extension/manifest.json file. <br/>Now you can open the web extension by clicking on his icon (top right) or by visiting moz-extesnion://EXTENSION-ID/WCD.html. <br/>NOTE: To use the extension in Chrome you need to install it with the help of other extensions such as the "firefox Relay" (https://chrome.google.com/webstore/detail/firefox-relay/lknpoadjjkjcmjhbjpcljdednccbldeb).
  
  
