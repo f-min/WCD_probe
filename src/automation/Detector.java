@@ -74,7 +74,7 @@ public class Detector
 	
 	public Detector(String cookies_input, HashSet<String> links_input, String domain)
 	{
-		p = Pattern.compile(".*[=|:](?)['|\"][a-z|A-Z|0-9|=|-|+|/|_]{20,100}(?)['|\"].*");
+		p = Pattern.compile(".*(?i)(_csrf|csrftoken|csrf-token|_csrftoken|csrf|csrf_|authenticity_token|form_key|content|value)(?)['|\"][=|:](?)['|\"][a-z|A-Z|0-9|=|-|+|/|_]{20,100}(?)['|\"].*");
 	    
 		ConfHandler conf = new ConfHandler();
 		marker = conf.getMarkerList();
