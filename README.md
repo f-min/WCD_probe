@@ -64,6 +64,22 @@ In every usage case if the tool find a possible WCD, it will append the results 
    This file contain the markers (one per line) to be used to search during the computation.
   
   
+## pros and cons
+
+### pros
+
+- tries to cover as many WCD cases as possible by analyzing the content of HTTP responses.
+- covers cases with and without HTTP headers related to caching and specific cases of some software
+- it has good effectiveness in cases of analysis with authentication
+
+### cons
+  
+
+- It requires a certain amount of CPU work
+- It is well suited for small scale analysis but not for large scale analysis.
+- to correctly detect the WCD it requires user authentication on the domain to be analyzed
+
+
 ## building details
 
 the following external libraries were used to build the program:
