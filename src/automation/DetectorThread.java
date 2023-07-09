@@ -356,5 +356,5 @@ public class DetectorThread extends Thread
 		scanner.close();
 		
         return false;	//otherwise return false
-	
+	}
 }
