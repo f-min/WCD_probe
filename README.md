@@ -25,7 +25,7 @@ my_phone_number
 
 ### usage with the CLI
 
- - run: `cd target && java -jar WCD-probe.jar --cookies=COOKIES --domain=DOMAIN_TO_ANALYZE`
+ - run: `java -jar WCD-probe.jar --cookies=COOKIES --domain=DOMAIN_TO_ANALYZE`
    where COOKIES, are your session cookies and DOMAIN_TO_ANALYZE is the domain you want to analyze
    
    
@@ -36,7 +36,7 @@ my_phone_number
  <br/> For doing this go to: about:debugging , click "This firefox" and then click "Load temporary Add-on" and select the wcd_prober/extension/manifest.json file. <br/>Now you can open the web extension by clicking on his icon (top right) or by visiting moz-extesnion://EXTENSION-ID/WCD.html. <br/>NOTE: To use the extension in Chrome you need to install it with the help of other extensions such as the "firefox Relay" (https://chrome.google.com/webstore/detail/firefox-relay/lknpoadjjkjcmjhbjpcljdednccbldeb).
  
  
- - run `java -jar WCD-probe.jar`
+ - run: `java -jar WCD-probe.jar`
  
  ![image]()
  
