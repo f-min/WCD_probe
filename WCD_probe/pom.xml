@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>WCD_probe-main</groupId>
+  <artifactId>WCD_probe-main</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>WCD_probe-main</name>
+  <packaging>jar</packaging>
+
+
+    <properties>
+        <maven.compiler.source>1.21</maven.compiler.source>
+        <maven.compiler.target>1.21</maven.compiler.target>
+        
+        <maven.compiler.release>21</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <!-- Selenium dependencies -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.25.0</version>
+        </dependency>
+
+        <!-- WebDriverManager dependency -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.9.2</version>
+        </dependency>
+
+        <!-- Google Guava (for InternetDomainName) -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>33.3.1-jre</version>
+        </dependency>
+       
+    
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.18.1</version> <!-- Or the latest stable version -->
+</dependency>
+
+</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                <finalName>WCD</finalName>
+                    <archive>
+                        <manifest>
+                            <mainClass>automation.WcdProbe</mainClass> <!-- Assicurati che il pacchetto e la classe siano corretti -->
+                        </manifest>
+                    </archive>
+                  <descriptors>
+                        <descriptor>src/assembly/assembly.xml</descriptor> <!-- Percorso del file descrittore -->
+                    </descriptors>
+                    
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> 
+                        <phase>package</phase> 
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+        </plugin>
+        </plugins>
+    </build>
+</project>
