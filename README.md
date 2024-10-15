@@ -38,11 +38,11 @@ my_phone_number
  
  - run: `java -jar WCD-probe.jar`
  
- ![image](https://github.com/f-min/WCD_probe/img/cli)
+ ![image](https://github.com/f-min/WCD_probe/img/cli.png)
  
  - once authenticated on the domain to test enter the domain name in the extension input and click "start scan". The java program will do the rest of the the job.
  
-  ![image](https://github.com/f-min/WCD_probe/img/extension)
+  ![image](https://github.com/f-min/WCD_probe/img/screen.png)
   
  
  
