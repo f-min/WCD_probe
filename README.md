@@ -3,13 +3,11 @@
 A tool to find web cache deception vulnerabilities
 
 
-## prerequisites
+## installation
 
- - download this repo and unzip it.
- - install Chrome on your machine.
- - download the chromedriver here: https://chromedriver.chromium.org/downloads, download the same version of your Chrome installation (chrome://version). Then move it to the program directory (the main repository directory).
+ - `git clone https://github.com/f-min/WCD_probe`
+ - `cd WCD_probe-main && mvn clean install`
  
-
 # usage
 
 ### before use
@@ -22,6 +20,7 @@ my_username
 my_email@email.com
 my_address
 my_phone_number
+
 ```
 
 ### usage with the CLI
@@ -79,14 +78,6 @@ In every usage case if the tool find a possible WCD, it will append the results 
 - It is well suited for small scale analysis but not for large scale analysis.
 - to correctly detect the WCD it requires user authentication on the domain to be analyzed
 
-
-## building details
-
-the following external libraries were used to build the program:
-  
-  - Jsoup (https://jsoup.org/) <br/>
-  - Selenium Java API (https://www.selenium.dev/) <br/>
- 
  
 ## limitations and future improvements
 
