@@ -50,7 +50,7 @@ public class Crawler
 
         // Imposta le opzioni di Chrome, come la modalità headless
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");  // Esegui Chrome in modalità headless
+        options.addArguments("--headless");  // Esegui Chrome in modalità headless
         options.addArguments("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36");
 
         // Crea l'istanza di ChromeDriver con le opzioni
