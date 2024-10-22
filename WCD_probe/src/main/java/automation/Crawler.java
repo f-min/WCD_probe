@@ -297,7 +297,7 @@ public class Crawler
 		
 		for(int i = 0; i < pairs.length; i++)			//for every cookie-name/cookie-value couple
 		{ 
-			if(!(pairs[i].indexOf("=") == pairs[i].length() - 1))		//if the cookie is not empty save his content and his name
+			if(!(pairs[i].indexOf("=") == pairs[i].length() - 1) && pairs[i].indexOf("=") != -1)		//if the cookie is not empty save his content and his name
 			{
 				cookie_values.add(pairs[i].substring(pairs[i].indexOf("=") + 1, pairs[i].length()));
 				cookie_names.add(pairs[i].substring(0, pairs[i].indexOf("=")));
