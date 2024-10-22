@@ -90,7 +90,7 @@ public class Detector
 		
 		for(int i = 0; i < pairs.length; i++)	//for every cookie
 		{
-			if(pairs[i].substring(0, pairs[i].indexOf("=")).toLowerCase().contains("x-magento-vary"))		//if there is a Magento openmage LTS cookie set the proper flag
+			if(pairs[i].indexOf("=") != -1 && pairs[i].substring(0, pairs[i].indexOf("=")).toLowerCase().contains("x-magento-vary"))		//if there is a Magento openmage LTS cookie set the proper flag
 			{
 				isMagentoCache = true;
 				magentoVaryCookieValue = pairs[i].substring(pairs[i].indexOf("=") + 1, pairs[i].length());
