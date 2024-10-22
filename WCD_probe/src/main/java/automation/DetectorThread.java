@@ -28,6 +28,7 @@ public class DetectorThread extends Thread
 	private String cookies;
 	private ArrayList<String> cookie_values;
 	private String host;
+	private String cache_buster;
 	private boolean isFirstDirLevel;
 	private boolean isMagentoCache = false;
 	private String magentoVaryCookieValue;
@@ -54,7 +55,21 @@ public class DetectorThread extends Thread
     		suffix[i] = detector.suffix.get(i);
     		//System.out.println(suffix[i]);
     	}
+
+
+	String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < 8; i++)
+        {
+            int index = random.nextInt(characters.length());
+            sb.append(characters.charAt(index));
+        }
     	
+    	cache_buster = sb.toString();
+
+	    
     	p = detector.p;
     	cookies = detector.getCookies();
     	cookie_values = detector.getCookie_values();
@@ -110,7 +125,7 @@ public class DetectorThread extends Thread
 			{
 					// send an authenticated request to emulate the victim clicking a malicious link
 				
-				 auth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=123")
+				 auth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=" + cache_buster)
 		         		.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8")
 		         	    .header("Accept-Encoding", "gzip, deflate")
 		         	    .header("Accept-Language", "it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3")
@@ -133,7 +148,7 @@ public class DetectorThread extends Thread
 				 
 				 if(isMagentoCache)	//if the application use Magento openmage LTS send a request to emulate the attacker request with the proper openmage LTS cookie
 				 {
-					 unauth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=123")
+					 unauth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=" + cache_buster)
 			             		.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8")
 			             	    .header("Accept-Encoding", "gzip, deflate")
 			             	    .header("Accept-Language", "it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3")
@@ -147,7 +162,7 @@ public class DetectorThread extends Thread
 				 }
 				 else		//otherwise send the classic attacker request
 				 {
-					 unauth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=123")
+					 unauth_response = Jsoup.connect(link + suffix[i] + "?wcdtest=" + cache_buster)
 		             		.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8")
 		             	    .header("Accept-Encoding", "gzip, deflate")
 		             	    .header("Accept-Language", "it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3")
