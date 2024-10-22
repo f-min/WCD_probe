@@ -72,7 +72,7 @@ public class Crawler
     
     public void getPageLinks(String URL_input, int depth) throws InterruptedException
     {
-    	System.out.println("domain: " + domain);
+    	//System.out.println("domain: " + domain);
     	
     	if(URL_input.startsWith("http://" + domain) || URL_input.startsWith("https://" + domain))		//if it's a valid URL
     	{
